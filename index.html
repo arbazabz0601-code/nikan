@@ -238,6 +238,56 @@ header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px soli
 .testi-who b{display:block;font-size:14px;}
 .testi-who span{font-size:12px;color:#93a1b2;}
 
+/* ---- Google reviews carousel ---- */
+.greviews-wrap{position:relative;z-index:1;display:flex;gap:32px;align-items:stretch;}
+.greviews-side{flex:0 0 250px;background:#fff;border-radius:var(--radius-lg);padding:28px 22px;text-align:center;box-shadow:var(--shadow-md);}
+.greviews-brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:16px;}
+.greviews-brand svg{width:26px;height:26px;flex-shrink:0;}
+.greviews-brand span{font-weight:700;font-size:15.5px;color:var(--navy);}
+.greviews-score{font-size:36px;font-weight:800;color:var(--navy);line-height:1;}
+.greviews-stars-row{display:flex;justify-content:center;gap:3px;margin:9px 0 10px;}
+.greviews-stars-row .g-star{width:18px;height:18px;}
+.greviews-stars-row .g-star-half{position:relative;width:18px;height:18px;}
+.greviews-stars-row .g-star-half svg{position:absolute;top:0;left:0;width:18px;height:18px;}
+.greviews-stars-row .g-star-half svg.bg{fill:#e3e6ea;}
+.greviews-stars-row .g-star-half svg.fg{fill:#fbbc04;clip-path:inset(0 30% 0 0);}
+.g-star{fill:#fbbc04;}
+.greviews-stars-sm{display:flex;gap:2px;margin-bottom:10px;}
+.greviews-stars-sm .g-star{width:13px;height:13px;fill:var(--lime);}
+.greviews-count{font-size:12.5px;color:var(--text-muted);margin-bottom:18px;}
+.greviews-powered{font-size:11.5px;color:var(--text-muted);margin-bottom:20px;}
+.greviews-powered b{color:#4285F4;font-weight:700;}
+.btn-google{width:100%;justify-content:center;background:#fff;color:#3c4043;border:1.5px solid #dadce0;font-size:14px;padding:12px 18px;}
+.btn-google:hover{background:#f8f9fa;box-shadow:var(--shadow-sm);}
+.btn-google svg{width:17px;height:17px;}
+.greviews-track-wrap{position:relative;flex:1;min-width:0;}
+.greviews-viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);}
+.greviews-track{display:flex;gap:18px;width:max-content;}
+.greviews-card{flex:0 0 300px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:24px;color:inherit;display:block;transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .25s ease,border-color .25s ease,box-shadow .25s ease;}
+.greviews-card:hover{transform:translateY(-7px) scale(1.015);background:rgba(255,255,255,.11);border-color:rgba(126,217,87,.4);box-shadow:0 14px 30px rgba(0,0,0,.28);}
+.greviews-card-top{display:flex;align-items:flex-start;gap:11px;margin-bottom:12px;}
+.greviews-avatar{width:40px;height:40px;min-width:40px;max-width:40px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14.5px;flex:0 0 40px;transition:transform .25s ease,box-shadow .25s ease;box-shadow:0 0 0 0 rgba(126,217,87,0);}
+.greviews-card:hover .greviews-avatar{transform:scale(1.08);box-shadow:0 0 0 5px rgba(126,217,87,.18);}
+.greviews-namewrap{flex:1;min-width:0;}
+.greviews-namewrap b{display:block;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.greviews-namewrap span{font-size:11.5px;color:#93a1b2;}
+.greviews-card-top .g-mark{width:16px;height:16px;flex-shrink:0;margin-top:2px;transition:transform .3s ease;}
+.greviews-card:hover .g-mark{transform:rotate(-14deg) scale(1.15);}
+.greviews-quote{font-size:13.5px;color:#dbe3ee;line-height:1.62;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;}
+.greviews-reply{font-size:12px;color:#93a1b2;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;}
+.greviews-reply b{color:#c4cedb;}
+.greviews-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:#fff;border:none;color:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);z-index:5;transition:background .18s ease,transform .18s ease;}
+.greviews-arrow svg{width:16px;height:16px;}
+.greviews-arrow:hover{background:var(--green);color:#fff;transform:translateY(-50%) scale(1.1);}
+.greviews-arrow:active{transform:translateY(-50%) scale(.94);}
+.greviews-arrow.prev{left:-8px;}
+.greviews-arrow.next{right:-8px;}
+@media (max-width:992px){
+  .greviews-wrap{flex-direction:column;}
+  .greviews-side{flex:none;}
+  .greviews-arrow{display:none;}
+}
+
 /* ================= MID CTA STRIP ================= */
 .mid-cta{position:relative;color:#fff;overflow:hidden;}
 .mid-cta .mc-bg{position:absolute;inset:0;z-index:0;}
@@ -913,7 +963,7 @@ footer{background:var(--navy);color:#c4cedb;padding-top:64px;}
 <!-- ================= HERO — DESKTOP ================= -->
 <section class="hero desktop-only" aria-label="Hero">
   <div class="hero-bg" aria-hidden="true">
-    <img src="banner.png" alt="Nikan Power Solutions solar and backup power">
+    <img src="banner1.png" alt="Nikan Power Solutions solar and backup power">
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-note desktop-only" aria-hidden="true">Sustainable<br>Energy for a<br>Brighter Tomorrow</div>
@@ -1424,30 +1474,27 @@ footer{background:var(--navy);color:#c4cedb;padding-top:64px;}
       <h2>What Our Customers Say</h2>
       <p>Real feedback from homes and businesses we've powered.</p>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="quote">"Our electricity bill dropped drastically after the solar installation. The team was professional and finished the work on time."</p>
-        <div class="testi-who">
-          <div class="testi-avatar">R</div>
-          <div><b>Rakesh Sharma</b><span>Residential Customer, Noida</span></div>
+    <div class="greviews-wrap" data-aos="fade-up" data-aos-delay="100">
+      <div class="greviews-side">
+        <div class="greviews-brand">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+          <span>Nikan Power Solutions</span>
         </div>
+        <div class="greviews-score">4.7</div>
+        <div class="greviews-stars-row" id="greviewsHeaderStars"></div>
+        <div class="greviews-count">Based on 56 reviews</div>
+        <div class="greviews-powered">powered by <b>Google</b></div>
+        <a href="https://www.google.com/search?q=nikan+power+soloution&rlz=1C1ONGR_en-GBIN1079IN1080&oq=nikan+power+soloution&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDczNTZqMGo3qAIAsAIA&sourceid=chrome&source=chrome.ob&ie=UTF-8&zx=1790419749847#lrd=0x390d100438e8b5df:0x9d20a5f0e5b04dc,1,,," target="_blank" rel="noopener" class="btn btn-google">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+          Review us on Google
+        </a>
       </div>
-      <div class="testi-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="quote">"Power cuts used to stop our production line. Their UPS and battery setup has kept us running without a single interruption since."</p>
-        <div class="testi-who">
-          <div class="testi-avatar">S</div>
-          <div><b>Sunita Verma</b><span>Factory Owner, Greater Noida</span></div>
+      <div class="greviews-track-wrap" id="greviewsWrap">
+        <button class="greviews-arrow prev" id="greviewsPrev" aria-label="Scroll reviews left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <div class="greviews-viewport">
+          <div class="greviews-track" id="greviewsTrack"></div>
         </div>
-      </div>
-      <div class="testi-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="quote">"From the free site visit to after-sales support, everything was smooth. Highly recommend Nikan Power Solutions."</p>
-        <div class="testi-who">
-          <div class="testi-avatar">A</div>
-          <div><b>Ankit Gupta</b><span>Office Owner, Delhi</span></div>
-        </div>
+        <button class="greviews-arrow next" id="greviewsNext" aria-label="Scroll reviews right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
       </div>
     </div>
   </div>
@@ -1463,7 +1510,7 @@ footer{background:var(--navy);color:#c4cedb;padding-top:64px;}
       <ul>
         <li><i class="fa-solid fa-phone"></i> <span>+91 70425 73963 &nbsp;|&nbsp; 08048073359</span></li>
         <li><i class="fa-solid fa-envelope"></i> <span>nikanpowersolutions@gmail.com</span></li>
-        <li><i class="fa-solid fa-location-dot"></i> <span>Haridwar, Uttarakhand, India &ndash; 249401</span></li>
+        <li><i class="fa-solid fa-location-dot"></i> <span>E-42, High Tension Line, Block A, Shyam Vihar Phase-1, Najafgarh, New Delhi, Delhi, 110043</span></li>
         <li><i class="fa-solid fa-clock"></i> <span>Mon &ndash; Sat, 9:00 AM &ndash; 7:00 PM</span></li>
       </ul>
       <a href="contact.html" class="btn btn-green">Get a Free Quote <i class="fa-solid fa-arrow-right"></i></a>
@@ -1513,14 +1560,13 @@ footer{background:var(--navy);color:#c4cedb;padding-top:64px;}
           <li><i class="fa-solid fa-phone"></i> <a href="tel:+917042573963">+91 70425 73963</a></li>
           <li><i class="fa-solid fa-headset"></i> <a href="tel:08048073359">08048073359</a></li>
           <li><i class="fa-solid fa-envelope"></i> <a href="mailto:nikanpowersolutions@gmail.com">nikanpowersolutions@gmail.com</a></li>
-          <li><i class="fa-solid fa-location-dot"></i> <a href="https://www.nikanpowersolutions.in/haridwar/mapview/29-9767856/78-1222336" target="_blank" rel="noopener">Haridwar, Uttarakhand, India &ndash; 249401</a></li>
+          <li><i class="fa-solid fa-location-dot"></i> <a href="https://www.nikanpowersolutions.in/haridwar/mapview/29-9767856/78-1222336" target="_blank" rel="noopener">E-42, High Tension Line, Block A, Shyam Vihar Phase-1, Najafgarh, New Delhi, Delhi, 110043</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>&copy; 2025 Nikan Power Solutions. All rights reserved.</span>
-      <span><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></span>
-    </div>
+<span><a href="https://yourdigitalcrew.com/" target="_blank" rel="noopener noreferrer" style="color:#FFD700;font-weight:600;">Designed &amp; Developed by Your Digital Crew</a></span>    </div>
   </div>
 </footer>
 
@@ -1615,6 +1661,80 @@ if(window.Swiper){
     }
   });
 }
+
+// ---- Google reviews auto-scroll carousel ----
+(function(){
+  var GOOGLE_REVIEW_URL = "https://www.google.com/search?q=nikan+power+soloution&rlz=1C1ONGR_en-GBIN1079IN1080&oq=nikan+power+soloution&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDczNTZqMGo3qAIAsAIA&sourceid=chrome&source=chrome.ob&ie=UTF-8&zx=1790419749847#lrd=0x390d100438e8b5df:0x9d20a5f0e5b04dc,1,,,";
+  var reviews = [
+    {n:"Umakant", t:"8 months ago", c:"#3fa535", q:"Both owner and staff members are very professional. They listen to your needs patiently and guide you thoroughly with the right options at a very fair price.", r:"Thank you so much for choosing us."},
+    {n:"lisha chauhan", t:"3 months ago", c:"#16294a", q:"Services were very quick and the owner was very helpful. Was very flexible as per what I wanted. Thank you!", r:"Thank you so much Ma'am for choosing us."},
+    {n:"Ashish Ddavidd", t:"2 years ago", c:"#2d7d26", q:"Very helpful and very nice people. Nikunj helped me when even APC people were unable to provide a solution for a failed motherboard. Most helpful and professionally efficient people in the business.", r:"Thank you so much sir for choosing us."},
+    {n:"Pushpendra Jaroliya", t:"9 months ago", c:"#1f3a63", q:"UPS provided was of good quality. Excellent and fast service. Very clear communication from their side.", r:"Thank you so much Sir."},
+    {n:"TECH MAN", t:"5 months ago", c:"#3fa535", q:"Good and durable products with great after sales service."},
+    {n:"manoj bisht", t:"9 months ago", c:"#16294a", q:"The service was excellent. Very polite, professional and detail-oriented. I'm extremely satisfied with the overall experience.", r:"Thank you so much Manoj ji."},
+    {n:"prakash ravi", t:"3 years ago", c:"#2d7d26", q:"Best service provider, very quickly ready for service on only one call, and very helpful with technical support on the telephone.", r:"Thank you so much sir."},
+    {n:"Ravinder Singh Rawat", t:"4 months ago", c:"#1f3a63", q:"Quick service and affordable prices.", r:"Thank you so much for choosing us."},
+    {n:"Ram Autar Mahali", t:"3 years ago", c:"#3fa535", q:"The owner was polite and quick. The place was good and clean. My 2 UPS were not working for days and he replaced the batteries within 5 minutes.", r:"Thank you so much sir for choosing us."},
+    {n:"Akhil Babu", t:"a month ago", c:"#16294a", q:"Nice person and good service.", r:"Thank you so much for choosing us."},
+    {n:"Sunny Sharma", t:"4 years ago", c:"#2d7d26", q:"Dealing with Nikan Power Solutions for more than 3 years now — service is timely, prices are very competitive and after-sales support is excellent.", r:"Thank you so much for this 5-star review."},
+    {n:"anmol singh", t:"2 years ago", c:"#1f3a63", q:"Wonderful people and excellent service! They answered all of my questions about purchasing my UPS and recommended a great UPS at the best price.", r:"Thank you so much for choosing us."},
+    {n:"Amarjeet Prajapati", t:"2 years ago", c:"#3fa535", q:"Best service and assistance provided by the Nikan team is unbeatable. Highly recommended.", r:"Thank you so much for choosing us."},
+    {n:"Vinay Arora", t:"2 years ago", c:"#16294a", q:"Have purchased a few UPS units and the service has been excellent. Highly recommend them for your power needs.", r:"Thank you so much sir for choosing us."},
+    {n:"Harshit Kumar Singh", t:"a year ago", c:"#2d7d26", q:"Great work. Quick solution and reasonably priced.", r:"Thank you so much."},
+    {n:"PumJi", t:"a year ago", c:"#1f3a63", q:"Good communication, UPS at a great price, and timely delivery. Great experience overall.", r:"Thank you so much sir for choosing us."}
+  ];
+
+  var track = document.getElementById('greviewsTrack');
+  if(track){
+    var STAR_PATH = 'M12 .587l3.668 7.568L24 9.306l-6 5.848L19.416 24 12 19.771 4.584 24 6 15.154 0 9.306l8.332-1.151z';
+    function starSVG(){ return '<svg class="g-star" viewBox="0 0 24 24"><path d="' + STAR_PATH + '"/></svg>'; }
+    var gIcon = '<svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>';
+    var stars5 = starSVG() + starSVG() + starSVG() + starSVG() + starSVG();
+    var headerStars = document.getElementById('greviewsHeaderStars');
+    if(headerStars){
+      var halfStar = '<span class="g-star-half"><svg class="bg" viewBox="0 0 24 24"><path d="' + STAR_PATH + '"/></svg><svg class="fg" viewBox="0 0 24 24"><path d="' + STAR_PATH + '"/></svg></span>';
+      headerStars.innerHTML = starSVG() + starSVG() + starSVG() + starSVG() + halfStar;
+    }
+    function cardHTML(rev){
+      var reply = rev.r ? '<div class="greviews-reply"><b>Response from the owner</b><br>' + rev.r + '</div>' : '';
+      return '<a class="greviews-card" href="' + GOOGLE_REVIEW_URL + '" target="_blank" rel="noopener">' +
+        '<div class="greviews-card-top"><div class="greviews-avatar" style="background:' + rev.c + '">' + rev.n.charAt(0) + '</div>' +
+        '<div class="greviews-namewrap"><b>' + rev.n + '</b><span>' + rev.t + '</span></div>' + gIcon + '</div>' +
+        '<div class="greviews-stars-sm">' + stars5 + '</div>' +
+        '<p class="greviews-quote">' + rev.q + '</p>' + reply + '</a>';
+    }
+    var html = reviews.map(cardHTML).join('');
+    track.innerHTML = html + html; // duplicate for seamless loop
+
+    var wrap = document.getElementById('greviewsWrap');
+    var pos = 0, half = 0, speed = 0.7, paused = false, resumeTimer;
+    function measure(){ half = track.scrollWidth / 2; }
+    measure();
+    window.addEventListener('resize', measure);
+    function tick(){
+      if(!paused){
+        pos -= speed;
+        if(Math.abs(pos) >= half) pos += half;
+        track.style.transform = 'translateX(' + pos + 'px)';
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    wrap.addEventListener('mouseenter', function(){ paused = true; });
+    wrap.addEventListener('mouseleave', function(){ paused = false; });
+    function nudge(dir){
+      paused = true;
+      pos += dir * 318;
+      if(pos > 0) pos -= half;
+      if(Math.abs(pos) >= half) pos += half;
+      track.style.transform = 'translateX(' + pos + 'px)';
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function(){ paused = false; }, 2600);
+    }
+    document.getElementById('greviewsPrev').addEventListener('click', function(){ nudge(1); });
+    document.getElementById('greviewsNext').addEventListener('click', function(){ nudge(-1); });
+  }
+})();
 </script>
 <script>
 /* ---- Power calculator (isolated; nothing leaks to the global scope) ---- */
